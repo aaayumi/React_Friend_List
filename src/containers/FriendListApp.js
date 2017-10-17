@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from './FriendListApp.css';
 import { connect } from 'react-redux';
 
-import {addFriend, deleteFriend, starFriend, selectFriend} from '../actions/FriendsActions';
+import {addFriend, deleteFriend, starFriend} from '../actions/FriendsActions';
 import { FriendList, AddFriendInput } from '../components';
 
 class FriendListApp extends Component {
@@ -13,8 +13,7 @@ class FriendListApp extends Component {
     const actions = {
       addFriend: this.props.addFriend,
       deleteFriend: this.props.deleteFriend,
-      starFriend: this.props.starFriend,
-      selectFriend: this.props.selectFriend
+      starFriend: this.props.starFriend
     };
 
     return (
@@ -34,6 +33,5 @@ function mapStateToProps(state) {
 export default connect(mapStateToProps, {
   addFriend,
   deleteFriend,
-  starFriend,
-  selectFriend
+  starFriend
 })(FriendListApp)

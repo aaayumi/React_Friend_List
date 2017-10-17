@@ -22,9 +22,3 @@ export function starFriend(id) {
   };
 }
 
-export function selectFriend(gender) {
-    return {
-        type: types.SELECT_FRIEND,
-        gender
-    };
-}

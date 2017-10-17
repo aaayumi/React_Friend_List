@@ -15,11 +15,16 @@ class AddFriendInput extends Component {
         value={this.state.name}
         onChange={this.handleChange.bind(this)}
         onKeyDown={this.handleSubmit.bind(this)} />
-        <div className="selectGender"><p>Select the gender of a friend</p>
-        <input type="checkbox" id="gender" name="gender" value="male" onChange={this.maleChange.bind(this)}  />
-        <label for="gender">Male</label>
-        <input type="checkbox" id="gender" name="gender" value="female" onChange={this.femaleChange.bind(this)} />
-        <label for="gender">Female</label>
+        
+        <div className="selectGender">
+            
+            <p>Select the gender of a friend</p>
+            
+            <input type="checkbox" id="gender" name="gender" value="male" onChange={this.maleChange.bind(this)}  />
+            <label for="gender">Male</label>
+            
+            <input type="checkbox" id="gender" name="gender" value="female" onChange={this.femaleChange.bind(this)} />
+            <label for="gender">Female</label>
         </div>
       </div>
     );
@@ -30,9 +35,7 @@ class AddFriendInput extends Component {
     this.state = {
       name: this.props.name || '',
       male: false,
-      maleCheck : false,
-      female: false,
-      femaleCheck: false
+      female: false
     };
   }
 
@@ -48,7 +51,7 @@ class AddFriendInput extends Component {
             male: !this.state.male,
             female: false
       })
-    console.log(this.state.gender)
+    console.log(!this.state.male)
   }
 
    femaleChange(e) {
@@ -65,6 +68,7 @@ class AddFriendInput extends Component {
     const gender = this.state.male ? "male" : "female" || this.state.female ? "female" : "male";
       
     console.log(gender)
+    
     if (e.which === 13) {
       this.props.addFriend(name, gender);
       this.setState({ name: '' , gender: ''});

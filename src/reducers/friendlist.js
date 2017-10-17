@@ -51,10 +51,6 @@ export default function friends(state = initialState, action) {
         ...state,
         friendsById: friends
       };
-    case types.SELECT_FRIEND:
-      return {
-      ...state
-      }
     default:
       return state;
   }

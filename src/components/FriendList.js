@@ -7,28 +7,27 @@ class FriendList extends Component {
   constructor(props, context){
       super(props, context);
       this.state = {
-          male: false,
-          female: false,
+          maleButton: false,
+          femaleButton: false,
           currentPage: 1,
           perPage: 1
       }
-     console.log(this.state.male)
   }
     
     maleButton (e) {
         this.setState({
-            male: !this.state.male,
-            female: false
+            maleButton: !this.state.maleButton,
+            femaleButton: false
         });
-         console.log(this.state.male)
+         console.log(this.state.maleButton)
     }
     
     femaleButton (e) {
         this.setState({
-            female: !this.state.female,
-            male: false
+            femaleButton: !this.state.femaleButton,
+            maleButton: false
         });
-          console.log(this.state.female)
+          console.log(this.state.femaleButton)
     }
     
     handleClick(e) {
@@ -46,11 +45,11 @@ class FriendList extends Component {
     const indexOfFirstItem = indexOfLastItem - perPage;
     const currentItems = friends.slice(indexOfFirstItem, indexOfLastItem)
     
-    // filter friends
+    // filter friends by gender
     const filterFriends = currentItems.filter( friend => this.state.male && friend.gender == 'Male' ||
     this.state.female && friend.gender === 'Female' || !this.state.male && !this.state.female)
     
-    const items = filterFriends.map(( friend, index) =>{
+    const items = filterFriends.map((friend, index) =>{
        return (
               <FriendListItem
                 key={index}
@@ -62,17 +61,12 @@ class FriendList extends Component {
             ); 
     })
     
-    // pagination 
+    // add pagination 
     const pageNumbers = [];
       for(let i = 1; i <= Math.ceil(friends.length/ perPage); i++) {
           pageNumbers.push(i);
       }
-      
-    // filter numbers
-    /* const filterPageNumbers = pageNumbers.filter(
-    number => this.state.male && this.friend.gender == 'male' ||
-    this.state.female && this.friend.gender === 'female' || !this.state.male && !this.state.female)*/
-    
+        
     const pagination = pageNumbers.map(number => {
         return(
         <li
@@ -90,17 +84,18 @@ class FriendList extends Component {
         <div>
         <div className="showGender">
         <p>Show friends by gender</p>
-        <button onClick={this.maleButton.bind(this)} >Male</button>
-    　　　<button onClick={this.femaleButton.bind(this)} >Female</button>
-       </div>
-      <ul className="friendList">
-           {items}
-      </ul>
-      <ul id="pageNumbers"
+            <button onClick={this.maleButton.bind(this)} >Male</button>
+            <button onClick={this.femaleButton.bind(this)} >Female</button>
+        </div>
+          
+        <ul className="friendList">
+            {items}
+        </ul>
+        <ul id="pageNumbers"
           style={{ display: pageNumbers.length < 1 ? "none" : "block" ,  listStyle: "none", display : "flex" }} >
-          {pagination}
-          </ul>
-     </div>
+            {pagination}
+        </ul>
+        </div>
     );
   }
 
