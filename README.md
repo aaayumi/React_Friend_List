@@ -17,3 +17,8 @@ open http://localhost:3000
 - You have received a working example so please do not upgrade any packages unless you really have to.
 - Please check for small things like syntax errors, since details matter.
 - Please deliver something that works, non working project is an automatic disqualification
+
+## Functionalities that I added 
+- A user can add name and select gender from checkbox and add them by pushing enter button.
+- A user can sort data according to gender by clicking button either male or female.
+- A user can click pagination and check each friend's information.
