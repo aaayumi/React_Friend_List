@@ -4,15 +4,23 @@ const initialState = {
   friendsById: [
     {
       name: 'Theodore Roosevelt',
-      starred: true
+      starred: true,
+      gender: 'Male'
     },
     {
       name: 'Abraham Lincoln',
-      starred: false
+      starred: false,
+      gender: 'Male'
     },
     {
       name: 'George Washington',
-      starred: false
+      starred: false,
+      gender: 'Male'
+    },
+    {
+      name: 'Hillary Clinton',
+      starred: false,
+      gender: 'Female'
     }
   ]
 };
@@ -25,7 +33,8 @@ export default function friends(state = initialState, action) {
         friendsById: [
           ...state.friendsById,
           {
-            name: action.name
+            name: action.name,
+            gender: action.gender
           }
         ],
       };
@@ -42,7 +51,10 @@ export default function friends(state = initialState, action) {
         ...state,
         friendsById: friends
       };
-
+    case types.SELECT_FRIEND:
+      return {
+      ...state
+      }
     default:
       return state;
   }

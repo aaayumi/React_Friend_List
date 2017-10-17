@@ -2,3 +2,30 @@
   padding-left: 0;
   margin-bottom: 0;
 }
+
+.showGender {
+   margin-bottom: 20px;
+}
+
+.showGender p {
+    margin-left: 10px;
+}
+
+.showGender button {
+    margin-left: 10px;
+    height: 40px;
+    width: 60px;
+    background-color:aquamarine;
+    border: none;
+}
+
+.friendList {
+    margin-left: -40px
+}
+
+#pageNumbers li {
+    background-color: white;
+    text-align: center;
+    height: 20px;
+    width: 30px;
+}

@@ -11,6 +11,8 @@
     "redux": "^3.6.0"
   },
   "devDependencies": {
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-15.4": "^1.0.2",
     "react-scripts": "0.9.5"
   },
   "scripts": {

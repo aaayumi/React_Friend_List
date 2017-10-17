@@ -4,3 +4,14 @@
   border-left: 0;
   border-right: 0;
 }
+
+.selectGender {
+    background-color: white;
+}
+
+.selectGender p {
+    margin-left: 10px;
+}
+.selectGender input {
+    margin-left: 10px;
+}
